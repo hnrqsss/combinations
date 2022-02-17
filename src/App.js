@@ -92,7 +92,9 @@ function App() {
         </Row>
         <Row>
           <Col md={{ span: 4, offset: 4 }}>
-            <ListResults listResults={listResults} />
+            {listResults.length > 0 && (
+              <ListResults listResults={listResults} />
+            )}
           </Col>
         </Row>
       </Container>
