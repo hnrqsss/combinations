@@ -5,6 +5,7 @@ import InputNumbers from "./containers/InputNumbers";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { combinations } from "./utils/functions";
 import ListResults from "./containers/ListResults";
+import GridSystem from "./components/GridSystem";
 
 function App() {
   const [countNumbers, setCountNumbers] = React.useState(0);
@@ -90,14 +91,10 @@ function App() {
             />
           </Col>
         </Row>
-        <Row>
-          <Col md={{ span: 4, offset: 4 }}>
-            {listResults.length > 0 && (
-              <ListResults listResults={listResults} />
-            )}
-          </Col>
-        </Row>
       </Container>
+      {listResults.length > 0 && (
+        <GridSystem colCount={3} md={4} items={listResults} />
+      )}
     </div>
   );
 }
